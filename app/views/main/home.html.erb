@@ -1,2 +1,9 @@
 <h1>Main#home</h1>
 <p>Find me in app/views/main/home.html.erb</p>
+
+<% if user_signed_in? %>
+    <p> Hola <h3> <%= current_user.email %> </h3></p>
+<% end %>
+
+<%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %>
+
