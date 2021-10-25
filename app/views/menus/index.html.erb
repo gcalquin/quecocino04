@@ -21,7 +21,7 @@
   <tbody>
     <% @menus.each do |menu| %>
       <tr>
-        <td><%= menu.category_id %></td>
+        <td><%= menu.category.name %></td>
         <td><%= menu.name %></td>
         <td><%= menu.time %></td>
         <td><%= menu.calories %></td>
