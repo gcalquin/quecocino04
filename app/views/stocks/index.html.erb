@@ -14,7 +14,7 @@
   <tbody>
     <% @stocks.each do |stock| %>
       <tr>
-        <td><%= stock.user_id %></td>
+        <td><%= stock.user.email %></td>
         <td><%= stock.ingredient_id %></td>
         <td><%= link_to 'Show', stock %></td>
         <td><%= link_to 'Edit', edit_stock_path(stock) %></td>

@@ -13,6 +13,8 @@ class StocksController < ApplicationController
   # GET /stocks/new
   def new
     @stock = Stock.new
+    @users = User.pluck :email, :id
+    @ingredients = Ingredient.pluck :name, :id
   end
 
   # GET /stocks/1/edit
