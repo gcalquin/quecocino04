@@ -56,6 +56,18 @@
     <%= form.text_field :photo_url %>
   </div>
 
+  <div class="field">
+    <%= form.label :photo %>
+    <%= form.text_field :photo %>
+  </div>
+
+  <%= form.fields_for :recipes do |ff| %>
+    <%= ff.label :ingredient_id  %>
+    <%= ff.select :ingredient_id, options_from_collection_for_select(Ingredient.all, :id, :name) %>
+    <%= ff.number_field :quantity %>
+  <% end  %>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>

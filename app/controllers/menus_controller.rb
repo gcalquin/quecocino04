@@ -14,6 +14,7 @@ class MenusController < ApplicationController
   def new
     @menu = Menu.new
     @categories = Category.pluck :name, :id
+    @menu.recipes.build
   end
 
   # GET /menus/1/edit
@@ -65,6 +66,6 @@ class MenusController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def menu_params
-      params.require(:menu).permit(:category_id, :name, :time, :calories, :persons, :description, :count, :note, :photo_url)
+      params.require(:menu).permit(:category_id, :name, :time, :calories, :persons, :description, :count, :note, :photo_url, :photo, recipes_attributes: [:id, :ingredient_id, :quantity] )
     end
 end

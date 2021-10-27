@@ -16,7 +16,11 @@
     <% @recipes.each do |recipe| %>
       <tr>
         <td><%= recipe.menu.name %></td>
-        <td><%= recipe.ingredient_id %></td>
+        <td>
+           <% recipe.ingredients.each do |ingredient| %>
+           <%= ingredient.name %>
+           <% end  %>
+        </td>
         <td><%= recipe.quantity %></td>
         <td><%= link_to 'Show', recipe %></td>
         <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
